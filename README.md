@@ -17,6 +17,8 @@ English: Script Python do to backup on hosts with running Datacom DMoS, to run f
 8#Enable the script on Crontab of your Operation Sistem to be automatizated
 
 
+
+
 Portuguese: Script Python para backup de hosts que executam Datacom DMoS, para funcionar o mesmo é necessário os passos:
 
 1#arquivo hosts.csv tem que ser editado de acordo com endereços de IP e pasta-destino que será enviado o arquivo de backup dentro do servidor FTP
