@@ -95,7 +95,7 @@ def backupHost(file,user,password):
         text_file.close()
 
         #abre conexão com o servidor FTP e envia o arquivo dentro do File_path indicado
-        ftp = FTP('99.99.99.999')  
+        ftp = FTP('99.99.99.99')  
         ftp.login('user_ftp','Pass_FTP')
         ftp.encoding = "utf-8"  
         file_send = file_name  
