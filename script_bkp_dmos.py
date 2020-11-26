@@ -11,7 +11,7 @@ from ftplib import FTP
 
 #Função que mostra como usar a aplicação
 def printUsage():
-    print ("python3 script_bkp.py -f hosts.csv\n")
+    print ("python3 script_bkp_dmos.py -f hosts.csv\n")
 
 #Função que valida se o parâmetro passado é realmente um IPv4 
 def validateIP(ip):
@@ -34,6 +34,7 @@ def importFile(file):
         arq.close()
         return linhas
 
+#função principal do script
 def backupHost(file,user,password):
     
     arquivo = importFile(file) # chama a Função para abrir e ler o arquivo
@@ -67,8 +68,9 @@ def backupHost(file,user,password):
         tn.write(password.encode('utf-8') + b"\n") 
         time.sleep(3)
 
+        #roda comando que mostra configuração atual
         tn.write(b"show running-config | nomore\n")
-        time.sleep(10) #tempo grande pois olts com muitas onus demoram bastante pra retornar todas as informacoes
+        time.sleep(90) #tempo grande pois olts com muitas onus demoram bastante pra retornar todas as informacoes
         tn.write(b"\nclear history\n")
         return_lineid = tn.read_until('clear history'.encode('utf-8'),3).decode('utf-8')
         data_return = return_lineid.splitlines()
